@@ -24,6 +24,7 @@ const CustomerSchema = new Schema({
   trim: true,
   required: true
  },
+ 
  logement: {
     type: String,
     trim: true,
@@ -54,6 +55,10 @@ const CustomerSchema = new Schema({
       trim: true,
       required: true
    },
+   paid:{
+      type:Boolean,
+      default:false
+    },
    avanceC :{
       type: String,
       trim: true,

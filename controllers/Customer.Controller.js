@@ -52,7 +52,9 @@ module.exports = {
     },
 
     getReservation: function (req, res, next) {
-        customerModel.find({}, { chekin: 1, chekout: 1 }, function (err, result) {
+        const {logement} =req.body;
+        //console.log({logement})
+        customerModel.find({logement}, { chekin: 1, chekout: 1,paid:1 }, function (err, result) {
 
             if (err) {
                 res.json({ status: "error", data: null });
@@ -62,6 +64,24 @@ module.exports = {
             
         });
 
-    }
+    },
+    getLogement: function (req, res, next) {
+        customerModel.find({}, { logement: 1,}, function (err, result) {
+
+            if (err) {
+                res.json({ status: "error", data: null });
+            } else {
+                res.json({ status: "success", data: result });
+            }
+            
+        });
+
+    },
+
+    
+   
+
+    
+    
 
 }
