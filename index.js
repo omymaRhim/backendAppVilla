@@ -33,5 +33,5 @@ app.use(function(req, res, next) {
      else 
        res.status(500).json({message: "Something looks wrong :( !!!"});
    });
-   
-app.listen(3100, function(){ console.log('Node server listening on port 3100');});
+   const PORT = process.env.PORT || 3100;
+app.listen(PORT, function(){ console.log('Node server listening on :' + PORT);});
