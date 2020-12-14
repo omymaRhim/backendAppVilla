@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const userRouter = require('./routers/User.Router');
 const customerRouter = require('./routers/Customer.Router');
 const app = express();
+
 const mongoose = require('./config/database'); //database
 // connection to mongodb
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
