@@ -3,6 +3,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const userRouter = require('./routers/User.Router');
 const customerRouter = require('./routers/Customer.Router');
+const evenementRouter = require('./routers/Evenement.Router');
 const app = express();
 
 const mongoose = require('./config/database'); //database
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 app.use("/users",userRouter);
 app.use("/customers",customerRouter);
+app.use("/evenement",evenementRouter);
 app.get('/', function(req, res){
  res.json({"aaa" : "Build REST API with node.js"});
 });
